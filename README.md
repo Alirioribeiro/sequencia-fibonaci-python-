@@ -1,2 +1,25 @@
 # sequencia-fibonaci-python-
 Exercicio de aprendizagem 
+# Função para calcular a sequência de Fibonacci
+def fibonacci(n): 
+    # Caso base
+    if n == 0 or n == 1: 
+        return n 
+    # Calcular a sequência de Fibonacci
+    else: 
+        return fibonacci(n-1) + fibonacci(n-2) 
+
+# Função para verificar se o número informado pertence à sequência
+def verifica_fibonacci(num):
+    for i in range(num+1):
+        fibo_num = fibonacci(i)
+        if fibo_num == num:
+            return 'O número informado pertence à sequência de Fibonacci'
+        elif fibo_num > num:
+            return 'O número informado não pertence à sequência de Fibonacci'
+
+# Leitura do número informado
+num = int(input('Informe um número: '))
+
+# Verificação do número informado
+print(verifica_fibonacci(num))
